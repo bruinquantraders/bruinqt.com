@@ -38,8 +38,18 @@ One-time setup on GitHub:
 **git-ignored on purpose** so it is never committed or published. Do not remove it from
 `.gitignore`.
 
+## Custom domain
+
+The site is served at **bruinquant.com** (see `CNAME`). For this to resolve, add these DNS
+records at your domain registrar:
+
+- Apex `bruinquant.com` → four `A` records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- (optional) `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+- `www` → `CNAME` to `bruinquantraders.github.io`
+
+Then in **Settings → Pages**, confirm the custom domain and enable **Enforce HTTPS**.
+
 ## TODO before going live
 
-- Replace placeholder contact email (`contact@bruinquanttraders.com`) with the real club email.
 - Update the Instagram link in the Join section.
 - Add real sponsor logos once partnerships are confirmed.
