@@ -1,0 +1,10 @@
+# Private club data — NEVER commit or publish (contains applicant responses,
+# ratings, and personal information).
+all-drive-data/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
