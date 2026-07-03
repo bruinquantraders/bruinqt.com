@@ -34,28 +34,14 @@
     });
   }
 
-  // Markets nav popup
-  var marketsBtn = document.getElementById("marketsNavBtn");
+  // Markets popup (visible by default; can be dismissed)
   var marketsPop = document.getElementById("marketsPop");
   var marketsClose = document.getElementById("marketsPopClose");
-  var openMarketsPop = function () {
-    if (!marketsPop) return;
-    marketsPop.hidden = false;
-    marketsPop.classList.add("is-open");
-    if (marketsBtn) marketsBtn.setAttribute("aria-expanded", "true");
-  };
   var closeMarketsPop = function () {
     if (!marketsPop) return;
     marketsPop.classList.remove("is-open");
     marketsPop.hidden = true;
-    if (marketsBtn) marketsBtn.setAttribute("aria-expanded", "false");
   };
-  if (marketsBtn && marketsPop) {
-    marketsBtn.addEventListener("click", function () {
-      if (marketsPop.classList.contains("is-open")) closeMarketsPop();
-      else openMarketsPop();
-    });
-  }
   if (marketsClose) marketsClose.addEventListener("click", closeMarketsPop);
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeMarketsPop();
