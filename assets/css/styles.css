@@ -74,6 +74,8 @@ img { max-width: 100%; display: block; }
   color: var(--gold); font-family: var(--display); font-weight: 700; font-size: 0.95rem;
   letter-spacing: 0.02em; box-shadow: var(--shadow);
 }
+.brand__logo { width: 40px; height: 40px; border-radius: 11px; object-fit: cover; display: block; background: #000; box-shadow: var(--shadow); }
+.footer__brand .brand__logo { width: 44px; height: 44px; }
 .brand__text { font-size: 1.02rem; color: var(--blue-dark); }
 .nav__links { display: flex; align-items: center; gap: 30px; }
 .nav__links a { font-size: 0.95rem; font-weight: 500; color: var(--blue-dark); opacity: 0.85; transition: opacity 0.15s ease; }
