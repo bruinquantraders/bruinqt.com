@@ -49,6 +49,7 @@
 
   // Reveal on scroll
   var reveals = document.querySelectorAll(".reveal");
+  var membersBoard = document.querySelector("#members .board");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
@@ -62,9 +63,28 @@
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     reveals.forEach(function (el, i) {
+      if (membersBoard && membersBoard.contains(el)) return;
       el.style.transitionDelay = (i % 4) * 60 + "ms";
       io.observe(el);
     });
+    if (membersBoard) {
+      membersBoard.querySelectorAll(".member.reveal").forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 40 + "ms";
+      });
+      var boardIo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            membersBoard.querySelectorAll(".member.reveal").forEach(function (el) {
+              el.classList.add("in");
+            });
+            boardIo.unobserve(e.target);
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
+      );
+      boardIo.observe(membersBoard);
+    }
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }

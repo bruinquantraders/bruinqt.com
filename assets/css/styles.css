@@ -478,11 +478,14 @@ img { max-width: 100%; display: block; }
 
 /* ============ Responsive ============ */
 @media (max-width: 980px) {
-  .pillars, .board { grid-template-columns: repeat(2, 1fr); }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
   .comp { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 44px; }
   .about-grid__about .section__head { margin-bottom: 0; }
   .join-ig { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (min-width: 761px) and (max-width: 980px) {
+  .board { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 760px) {
   .nav__links {
@@ -498,16 +501,119 @@ img { max-width: 100%; display: block; }
   .nav__cta { width: auto; }
   .nav__toggle { display: flex; }
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
-  .tracks, .projects { grid-template-columns: 1fr; }
+  .tracks { grid-template-columns: 1fr; }
   .join-ig { grid-template-columns: 1fr; gap: 36px; }
   .section { padding: 72px 0; }
+  #about .about-grid { gap: 36px; }
+  #about .about-grid__about,
+  #about .about-grid__projects {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #about .about-grid__about .section__sub {
+    overflow-wrap: anywhere;
+  }
+  #about .about-grid__projects {
+    align-items: flex-start;
+    width: 100%;
+    overflow: visible;
+  }
+  #about .about-grid__projects .section__head {
+    width: auto;
+    max-width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  #about .slides {
+    width: min(300px, 100%);
+    height: auto;
+    aspect-ratio: 480 / 299;
+    max-width: 100%;
+  }
+  #about .projects-scroll {
+    width: 100%;
+    margin: 0 -24px;
+    padding: 0 24px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  #about .projects-scroll::-webkit-scrollbar { display: none; }
+  #about .projects--strip {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    grid-template-columns: unset;
+  }
+  #about .project--mini {
+    flex: 0 0 168px;
+    width: 168px;
+    scroll-snap-align: start;
+  }
+  #members .container { overflow: visible; }
+  #members .board-scroll {
+    margin: 0 -24px;
+    padding: 0 24px 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  #members .board-scroll::-webkit-scrollbar { display: none; }
+  #members .board {
+    --member-w: calc((100vw - 48px) / 2);
+    --member-h: calc(var(--member-w) * 4 / 3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0;
+    width: max-content;
+    height: calc(var(--member-h) * 2);
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 1px solid var(--line);
+    border-left: 0; border-right: 0;
+  }
+  #members .board::-webkit-scrollbar { display: none; }
+  #members .member {
+    width: var(--member-w);
+    height: var(--member-h);
+    flex: 0 0 var(--member-h);
+    aspect-ratio: auto;
+    scroll-snap-align: start;
+    border: 1px solid var(--line);
+    margin-right: -1px;
+    margin-bottom: -1px;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  #members .member__overlay { padding: 10px; }
+  #members .member__name { font-size: 0.78rem; }
+  #members .member__role { font-size: 0.7rem; }
+  #members .member__bio { font-size: 0.66rem; line-height: 1.2; }
+  #members .member--noimg::before { font-size: 2rem; }
   .sponsor-cta { padding: 34px 28px; }
   /* Fixed backgrounds are janky on mobile — pin them to scroll */
   .band, #join.section--dark { background-attachment: scroll; }
   .band { padding: 84px 0; }
 }
 @media (max-width: 520px) {
-  .pillars, .board, .comp { grid-template-columns: 1fr; }
+  .pillars, .comp { grid-template-columns: 1fr; }
   .brand__text { display: none; }
 }
 
