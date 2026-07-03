@@ -90,4 +90,12 @@
       c.textContent = (c.getAttribute("data-prefix") || "") + c.getAttribute("data-count") + (c.getAttribute("data-suffix") || "");
     });
   }
+
+  // Open Markets dropdown when linked via #markets
+  var marketsDrop = document.querySelector(".markets-drop");
+  var openMarkets = function () {
+    if (marketsDrop && location.hash === "#markets") marketsDrop.open = true;
+  };
+  openMarkets();
+  window.addEventListener("hashchange", openMarkets);
 })();
