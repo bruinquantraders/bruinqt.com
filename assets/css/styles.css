@@ -166,12 +166,6 @@ img { max-width: 100%; display: block; }
 }
 
 /* Photo-backed section overrides (dimmed UCLA campus) */
-#competition.section--dark {
-  background:
-    linear-gradient(rgba(0,42,66,0.80), rgba(1,22,39,0.90)),
-    url("../img/campus-dusk.jpg") center / cover fixed no-repeat;
-  background-color: var(--blue-deep);
-}
 #join.section--dark {
   background:
     linear-gradient(rgba(1,22,39,0.84), rgba(0,42,66,0.82)),
@@ -378,7 +372,7 @@ img { max-width: 100%; display: block; }
   .section { padding: 72px 0; }
   .sponsor-cta { padding: 34px 28px; }
   /* Fixed backgrounds are janky on mobile — pin them to scroll */
-  .band, #competition.section--dark, #join.section--dark { background-attachment: scroll; }
+  .band, #join.section--dark { background-attachment: scroll; }
   .band { padding: 84px 0; }
 }
 @media (max-width: 520px) {
