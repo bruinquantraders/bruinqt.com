@@ -241,7 +241,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============ Projects ============ */
-.about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 .about-grid__projects .section__head { margin-bottom: 28px; }
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .project {
