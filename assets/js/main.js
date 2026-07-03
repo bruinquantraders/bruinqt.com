@@ -24,14 +24,42 @@
       toggle.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", String(open));
     });
-    links.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
+    links.querySelectorAll("a, button").forEach(function (el) {
+      el.addEventListener("click", function () {
+        if (el.id === "marketsNavBtn") return;
         links.classList.remove("open");
         toggle.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
       });
     });
   }
+
+  // Markets nav popup
+  var marketsBtn = document.getElementById("marketsNavBtn");
+  var marketsPop = document.getElementById("marketsPop");
+  var marketsClose = document.getElementById("marketsPopClose");
+  var openMarketsPop = function () {
+    if (!marketsPop) return;
+    marketsPop.hidden = false;
+    marketsPop.classList.add("is-open");
+    if (marketsBtn) marketsBtn.setAttribute("aria-expanded", "true");
+  };
+  var closeMarketsPop = function () {
+    if (!marketsPop) return;
+    marketsPop.classList.remove("is-open");
+    marketsPop.hidden = true;
+    if (marketsBtn) marketsBtn.setAttribute("aria-expanded", "false");
+  };
+  if (marketsBtn && marketsPop) {
+    marketsBtn.addEventListener("click", function () {
+      if (marketsPop.classList.contains("is-open")) closeMarketsPop();
+      else openMarketsPop();
+    });
+  }
+  if (marketsClose) marketsClose.addEventListener("click", closeMarketsPop);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMarketsPop();
+  });
 
   // Reveal on scroll
   var reveals = document.querySelectorAll(".reveal");
@@ -90,12 +118,4 @@
       c.textContent = (c.getAttribute("data-prefix") || "") + c.getAttribute("data-count") + (c.getAttribute("data-suffix") || "");
     });
   }
-
-  // Open Markets dropdown when linked via #markets
-  var marketsDrop = document.querySelector(".markets-drop");
-  var openMarkets = function () {
-    if (marketsDrop && location.hash === "#markets") marketsDrop.open = true;
-  };
-  openMarkets();
-  window.addEventListener("hashchange", openMarkets);
 })();

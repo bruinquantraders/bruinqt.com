@@ -32,7 +32,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#members">Members</a>
-        <a href="#markets">Markets</a>
+        <button type="button" class="nav__markets" id="marketsNavBtn" aria-expanded="false" aria-controls="marketsPop">Markets</button>
         <a href="https://www.instagram.com/bruinquantraders/" target="_blank" rel="noopener" class="nav__ig" aria-label="Bruin Quant Traders on Instagram">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -52,6 +52,16 @@
       </button>
     </div>
   </header>
+
+  <div class="markets-pop" id="marketsPop" role="region" aria-label="Play Markets" hidden>
+    <div class="container markets-pop__inner">
+      <p class="markets-pop__text">
+        <strong>Play Markets</strong> &mdash; set a strategy and compete head-to-head against others on the leaderboard.
+        <a href="https://markets.bruinquant.com" target="_blank" rel="noopener">markets.bruinquant.com <span aria-hidden="true">&#8599;</span></a>
+      </p>
+      <button type="button" class="markets-pop__close" id="marketsPopClose" aria-label="Close">&times;</button>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="top">
@@ -334,57 +344,6 @@
     </div>
   </section>
 
-  <!-- MARKETS -->
-  <section class="section" id="markets">
-    <div class="container">
-      <details class="markets-drop reveal">
-        <summary class="markets-drop__summary">
-          <div class="markets-drop__head">
-            <span class="tag">Markets</span>
-            <div class="markets-drop__copy">
-              <span class="markets-drop__title">Play Markets</span>
-              <span class="markets-drop__sub">Set a strategy and compete head-to-head against others on the leaderboard.</span>
-            </div>
-          </div>
-          <span class="markets-drop__chev" aria-hidden="true"></span>
-        </summary>
-        <div class="markets-drop__panel">
-          <div class="markets">
-            <div class="markets__text">
-              <h2>Play <a class="markets__handle" href="https://markets.bruinquant.com" target="_blank" rel="noopener">Colonel Blotto</a></h2>
-              <p class="section__sub">
-                Deploy 100 troops across 10 fields. Every strategy on the board plays every other
-                one head-to-head &mdash; your rank is how much ground you take.
-              </p>
-              <a class="btn btn--primary markets__btn" href="https://markets.bruinquant.com" target="_blank" rel="noopener">
-                Play at markets.bruinquant.com <span aria-hidden="true">&#8599;</span>
-              </a>
-            </div>
-            <a class="markets__card" href="https://markets.bruinquant.com" target="_blank" rel="noopener" aria-label="Open BQT Markets Colonel Blotto game">
-              <div class="markets__cardhead">
-                <span class="markets__badge">Colonel Blotto</span>
-                <span class="markets__live">live</span>
-              </div>
-              <div class="markets__preview" aria-hidden="true">
-                <div class="markets__col"><div class="markets__bar" style="height:18%"></div><span>1</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:42%"></div><span>2</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:8%"></div><span>3</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:55%"></div><span>4</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:28%"></div><span>5</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:72%"></div><span>6</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:35%"></div><span>7</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:61%"></div><span>8</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:48%"></div><span>9</span></div>
-                <div class="markets__col"><div class="markets__bar" style="height:88%"></div><span>10</span></div>
-              </div>
-              <div class="markets__foot">View leaderboard <span aria-hidden="true">&#8599;</span></div>
-            </a>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
   <!-- INSTAGRAM -->
   <section class="section section--alt" id="instagram">
     <div class="container">
@@ -456,7 +415,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#members">Members</a>
-        <a href="#markets">Markets</a>
+        <a href="https://markets.bruinquant.com" target="_blank" rel="noopener">Markets</a>
         <a href="#join">Join</a>
         <a href="https://www.instagram.com/bruinquantraders/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/company/bruin-quant-traders/" target="_blank" rel="noopener">LinkedIn</a>
