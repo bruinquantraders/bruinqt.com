@@ -193,6 +193,7 @@ img { max-width: 100%; display: block; }
 .band__title { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.12; letter-spacing: -0.02em; color: #fff; }
 .band__text { margin-top: 18px; font-size: 1.08rem; color: rgba(240,240,240,0.85); }
 .section__head { max-width: 720px; margin-bottom: 54px; }
+#about .section__head { margin-bottom: 0; }
 .section__head h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.1; letter-spacing: -0.02em; margin-top: 14px; }
 .section--dark .section__head h2 { color: #fff; }
 .section__sub { margin-top: 18px; font-size: 1.06rem; color: var(--muted); }
