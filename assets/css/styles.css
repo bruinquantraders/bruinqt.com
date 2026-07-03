@@ -338,6 +338,29 @@ img { max-width: 100%; display: block; }
 .member__role { color: #fff; font-weight: 700; font-size: 0.78rem; text-shadow: 0 1px 6px rgba(0,0,0,0.8); }
 .member__bio { color: rgba(255,255,255,0.82); font-size: 0.72rem; text-shadow: 0 1px 6px rgba(0,0,0,0.8); }
 
+/* ============ Companies wall ============ */
+.companies { margin-top: 56px; text-align: center; }
+.companies__label {
+  font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 26px;
+}
+.company-wall {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 18px 44px;
+}
+.company {
+  font-family: var(--display); font-weight: 700; font-size: 1.24rem; letter-spacing: -0.01em;
+  color: rgba(255,255,255,0.42); filter: grayscale(100%);
+  transition: color 0.2s ease, opacity 0.2s ease; white-space: nowrap;
+}
+.company:hover { color: rgba(255,255,255,0.85); }
+.company__logo {
+  height: 26px; width: auto; object-fit: contain;
+  filter: grayscale(100%) brightness(0) invert(1); opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+.company__logo:hover { opacity: 0.9; }
+
 /* ============ Sponsor CTA ============ */
 .sponsor-cta {
   display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;
