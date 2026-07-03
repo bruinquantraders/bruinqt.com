@@ -359,6 +359,7 @@ img { max-width: 100%; display: block; }
   filter: brightness(0) invert(1); opacity: 0.5;
   transition: opacity 0.2s ease;
 }
+.company__logo--wide { max-width: 210px; }
 .company__logo:hover { opacity: 0.9; }
 
 /* ============ Sponsor CTA ============ */
