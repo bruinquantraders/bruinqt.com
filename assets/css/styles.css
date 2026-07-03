@@ -242,7 +242,13 @@ img { max-width: 100%; display: block; }
 
 /* ============ Projects ============ */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.about-grid__projects .section__head { margin-bottom: 28px; }
+.about-grid__projects {
+  display: flex; flex-direction: column; align-items: flex-end;
+}
+.about-grid__projects .section__head {
+  width: 480px; max-width: 100%;
+  margin-bottom: 28px; text-align: right;
+}
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .project {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -273,14 +279,15 @@ img { max-width: 100%; display: block; }
 
 /* ---- Compact horizontal project strip ---- */
 .projects--strip {
-  display: flex; gap: 12px; grid-template-columns: none;
+  display: flex; flex-wrap: nowrap; gap: 12px; grid-template-columns: none;
+  width: 480px; max-width: 100%;
   overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
 }
 .projects--strip::-webkit-scrollbar { height: 6px; }
 .projects--strip::-webkit-scrollbar-thumb { background: var(--line-strong, rgba(255,255,255,0.28)); border-radius: 999px; }
 .project--mini {
-  flex: 0 0 200px; scroll-snap-align: start; padding: 14px 16px;
+  flex: 0 0 168px; scroll-snap-align: start; padding: 12px 13px;
   display: flex; flex-direction: column; gap: 8px; min-height: 118px;
 }
 .project--mini .project__badge { font-size: 0.62rem; padding: 3px 8px; }
