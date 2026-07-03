@@ -80,6 +80,8 @@ img { max-width: 100%; display: block; }
   padding: 9px 20px; border-radius: 999px; font-weight: 600;
 }
 .nav__cta:hover { background: var(--blue); }
+.nav__ig { display: inline-flex; align-items: center; color: var(--blue-dark); opacity: 0.85; transition: opacity 0.15s ease, transform 0.15s ease; }
+.nav__ig:hover { opacity: 1; transform: translateY(-1px); color: var(--blue); }
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__toggle span { width: 24px; height: 2px; background: var(--blue-dark); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
 .nav__toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -255,6 +257,42 @@ img { max-width: 100%; display: block; }
 }
 .project h3 { font-family: var(--display); font-size: 1.3rem; }
 .project p { color: var(--muted); }
+.project__link {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 16px;
+  font-weight: 600; font-size: 0.92rem; color: var(--blue);
+}
+.project__link:hover { color: var(--blue-dark); text-decoration: underline; }
+
+/* ============ Instagram ============ */
+.ig { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.ig__text h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: -0.02em; margin-top: 14px; }
+.ig__handle {
+  background: linear-gradient(45deg, #f09433, #e6683c 30%, #dc2743 50%, #cc2366 75%, #bc1888);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ig__btn { margin-top: 24px; }
+.ig__card {
+  display: block; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ig__card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.ig__head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.ig__avatar {
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 0.85rem; color: #fff;
+  background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888);
+}
+.ig__meta { display: flex; flex-direction: column; line-height: 1.25; }
+.ig__meta strong { font-size: 0.98rem; color: var(--ink); }
+.ig__meta span { font-size: 0.82rem; color: var(--muted); }
+.ig__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ig__grid span {
+  aspect-ratio: 1 / 1; border-radius: 8px; background-size: cover; background-position: center;
+  background-color: var(--paper-alt);
+}
+.ig__tile--grad { background-image: linear-gradient(135deg, var(--blue), var(--gold)); }
+.ig__foot { text-align: center; margin-top: 14px; font-weight: 600; font-size: 0.92rem; color: var(--blue); }
 
 /* ============ Competition ============ */
 .comp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -336,6 +374,7 @@ img { max-width: 100%; display: block; }
   .nav__toggle { display: flex; }
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
   .tracks, .projects { grid-template-columns: 1fr; }
+  .ig { grid-template-columns: 1fr; gap: 28px; }
   .section { padding: 72px 0; }
   .sponsor-cta { padding: 34px 28px; }
   /* Fixed backgrounds are janky on mobile — pin them to scroll */
