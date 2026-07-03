@@ -302,7 +302,7 @@ img { max-width: 100%; display: block; }
 
 /* ============ Board ============ */
 .board {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
   border: 1px solid var(--line); border-radius: 0; overflow: hidden;
 }
 .member {
