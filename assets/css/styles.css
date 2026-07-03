@@ -309,13 +309,17 @@ img { max-width: 100%; display: block; }
 }
 .member:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(255,255,255,0.28); }
 .member__avatar {
-  width: 76px; height: 76px; margin: 0 auto 16px; border-radius: 50%;
+  width: 84px; height: 84px; margin: 0 auto 16px; border-radius: 50%;
   display: grid; place-items: center;
   background: linear-gradient(135deg, #2a2a30, #0c0c0e); border: 1px solid var(--line);
   color: var(--gold); font-family: var(--display); font-weight: 700; font-size: 1.5rem;
   box-shadow: var(--shadow);
 }
 .member__avatar::after { content: attr(data-initials); }
+.member__photo {
+  width: 84px; height: 84px; margin: 0 auto 16px; border-radius: 50%;
+  object-fit: cover; display: block; border: 1px solid var(--line); box-shadow: var(--shadow);
+}
 .member h3 { font-family: var(--display); font-size: 1.14rem; }
 .member__role { color: var(--blue); font-weight: 600; font-size: 0.9rem; margin: 4px 0 10px; }
 .member__bio { color: var(--muted); font-size: 0.9rem; }
